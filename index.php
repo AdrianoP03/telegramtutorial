@@ -68,9 +68,14 @@
       break;
   }
 
+  //Invio foto | sendPhoto
 
+  function sendPhoto($chatId,$photo){
+  $url = $GLOBALS[website]."/sendPhoto?chat_id=$chatId&photo=".urlencode($photo);
+  file_get_contents($url);
+  }
 
-
+  //Invio messaggio | sendMessage
 
   function sendMessage($chatId,$text,$tastiera,$tipo){
     if(isset($tastiera)){
